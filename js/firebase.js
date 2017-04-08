@@ -137,6 +137,7 @@ get_vals(key);
 	    	const review = reference.child("reviews");
 
 		allRatings.push(numRating);
+	    	review.push(reviewText); 
 
 		allRatings.once("value", function(snapshot) {
 		  var avgGenderRatingValue = 0;
