@@ -102,6 +102,7 @@ reviews.once("value", function(snapshot) {
 
 		const reference = movies_db.child(key);
 		const allGenderRatings = reference.child("gender_rating");
+	    	const overallRating = reference.child("overall_rating");
 		const allRaceRatings = reference.child("race_rating");
 		const avgRaceRating = reference.child("average_race_rating");
 		const avgGenderRating = reference.child("average_gender_rating");
