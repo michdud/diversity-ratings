@@ -116,7 +116,7 @@ get_vals(key);
 		  	var movie = snapshot.val();
 
 		  	if (movie.average_gender_rating != null) {
-		  		overallRatingValue = movie.average_gender_rating + movie.average_race_rating;
+		  		overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
 		  	} else {
 		  		overallRatingValue = movie.average_race_rating;
 		  	}
