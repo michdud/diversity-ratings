@@ -86,6 +86,7 @@ function get_vals(id){
 
 get_vals(key);
 
+/****** firebase **********/
 const reviews = movies_db.child(key).child("reviews");
 
 reviews.once("value", function(snapshot) {
@@ -100,7 +101,6 @@ reviews.once("value", function(snapshot) {
 		var reviewText = $('#gender_explanation').val();
 
 		const reference = movies_db.child(key);
-		const overallRating = reference.child("overall_rating");
 		const allGenderRatings = reference.child("gender_rating");
 		const allRaceRatings = reference.child("race_rating");
 		const avgRaceRating = reference.child("average_race_rating");
@@ -113,7 +113,6 @@ reviews.once("value", function(snapshot) {
 
 		var avgRaceRatingValue = 0;
 		var avgGenderRatingValue = 0;
-		var overallRatingValue = 0;
 
 		allGenderRatings.once("value", function(snapshot) {		  
 		  var numGenderChildren = snapshot.numChildren();
@@ -130,7 +129,6 @@ reviews.once("value", function(snapshot) {
 		  var numRaceChildren = snapshot.numChildren();
 
 		  snapshot.forEach(function(child) {
-		  	console.log(child.val());
 		    avgRaceRatingValue += parseInt(child.val());
 		  });
 	
@@ -138,22 +136,22 @@ reviews.once("value", function(snapshot) {
 		  avgRaceRating.set(Math.round(avgRaceRatingValue * 100) / 100);
 		});
 
-		reference.on("value", function(snapshot) {		  
+
+		reference.on("value", function(snapshot) {
+		  	var overallRatingValue = 0;
 		  	var movie = snapshot.val();
 
-		  	if (movie.average_race_rating != null || movie.average_gender_rating != null) {
+		  	if (movie.average_race_rating != null) {
 		  		overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
-		  	} else if (movie.average_race_rating == null) {
-		  		overallRatingValue = movie.average_gender_rating;
 		  	} else {
-		  		overallRatingValue = movie.average_race_rating;
-		  	}
-
+		  		overallRatingValue = movie.average_gender_rating;
+		  	}	
+			
 			overallRating.set(Math.round(overallRatingValue * 100) / 100);
 		});
-	});
+
 	    location.reload(false);
     }
 
-var submit = document.getElementById('gender_rating');
+submit = document.getElementById('gender_rating');
 submit.onclick = writeGender;
