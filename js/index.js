@@ -3,19 +3,22 @@ var page = 1;
 var last_key;
 const movies_db = firebase.database().ref('movies');
 
-var make_movie_box = function make_movie_box(
+var make_movie_box = function make_movie_box(id,
     index, img_src,title,date,rat_overall, rat_race, rat_gender){
     rat_overall = "Overall Rating: " + rat_overall;
     rat_race = "Racial Diversity: " + rat_race;
     rat_gender = "Gender Diversity: " + rat_gender;
-    $("#" + index).each(function(index,el){
-	$(this).find("img").attr("src", img_src);
-	$(this).find(".movie_title a").html(title);
-	$(this).find(".release_date > p").html(date);
-	$(this).find(".rating_overall > h4").html(rat_overall);
-	$(this).find(".rating_race_diversity > p").html(rat_race);
-	$(this).find(".rating_gender_representation > p").html(rat_gender);
+    var outlink = "/movie.html?key=" + id;
+    var box = $("#" + index);    
+    $("#" + index + " a").each(function() {
+        $(this).attr('href', outlink);
     });
+    box.find("img").attr("src", img_src);
+    box.find(".movie_title a").html(title);
+    box.find(".release_date > p").html(date);
+    box.find(".rating_overall > h4").html(rat_overall);
+    box.find(".rating_race_diversity > p").html(rat_race);
+    box.find(".rating_gender_representation > p").html(rat_gender);
 };
 
 function parse_date(release_date) {
@@ -39,6 +42,7 @@ function setup_page(page, last_key){
 
     firstn_movies.once('value', function(snapshot) {
 	snapshot.forEach(function(childSnapshot) {
+	    var id = childSnapshot.getKey();
 	    var img_src = childSnapshot.val().poster_path;
 	    img_src = "https://image.tmdb.org/t/p/w1280" + img_src;
 	    var title = childSnapshot.val().original_title;
@@ -47,10 +51,9 @@ function setup_page(page, last_key){
 	    var rat_overall = "100%";//childSnapshot.val().
 	    var rat_race = "100%";//childSnapshot.val().
 	    var rat_gender = "100%";//childSnapshot.val().;
-	    make_movie_box(index,img_src,title,release_date,rat_overall,rat_race,rat_gender);
+	    make_movie_box(id,index,img_src,title,release_date,rat_overall,rat_race,rat_gender);
 	    //last_Key = snapshot.key();
 	    index++;
-	    console.log(index);
 	});
     });
 };
