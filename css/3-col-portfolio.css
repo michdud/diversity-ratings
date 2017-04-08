@@ -1,0 +1,49 @@
+/*!
+ * Start Bootstrap - 3 Col Portfolio (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.portfolio-item {
+    margin-bottom: 25px;
+    display: inline-block;
+    float: left;
+}
+
+.portfolio-item h3 p{
+    padding-left: 10px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.movie_info{
+  padding-bottom: 25px;
+  display: inline-block;
+  float: left;
+}
+
+.movie_title{
+}
+
+.poster_path{
+  margin-bottom: 25px;
+  float: left;
+}
+
+.release_date{
+}
+
+.rating_race_diversity{
+}
+
+.rating_gender_representation{
+}
+
+.rating_overall{
+}
