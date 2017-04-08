@@ -32,7 +32,7 @@ function parse_date(release_date) {
 
 function setup_page(page, last_key){
     var index = 0;
-    var limit = 6;
+    var limit = 25;
     var firstn_movies;
     if (page == 1){
 	firstn_movies = movies_db.orderByKey().limitToFirst(limit);
@@ -48,9 +48,18 @@ function setup_page(page, last_key){
 	    var title = childSnapshot.val().title;
 	    var release_date = childSnapshot.val().release_date;
 	    release_date = parse_date(release_date);
-	    var rat_overall = "100%";//childSnapshot.val().
-	    var rat_race = "100%";//childSnapshot.val().
-	    var rat_gender = "100%";//childSnapshot.val().;
+	    var rat_overall = childSnapshot.val().overall_rating;
+	    if (rat_overall == null){
+		rat_overall = "-";
+	    }			
+	    var rat_race = childSnapshot.val().average_race_rating;
+	    if (rat_race == null){
+		rat_race = "-";
+	    }
+	    var rat_gender = childSnapshot.val().average_gender_rating;
+	    if (rat_gender == null){
+		rat_gender = "-";
+	    }
 	    make_movie_box(id,index,img_src,title,release_date,rat_overall,rat_race,rat_gender);
 	    //last_Key = snapshot.key();
 	    index++;

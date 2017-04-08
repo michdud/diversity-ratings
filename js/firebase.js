@@ -54,9 +54,18 @@ function get_vals(id){
 	img_src = "https://image.tmdb.org/t/p/w1280" + img_src;
 	var date = snap.val().release_date;
 	date = parse_date(date);
-	var rat_overall = "100%";//childSnapshot.val().
-	var rat_race = "100%";//childSnapshot.val().
-	var rat_gender = "100%";//childSnapshot.val().;
+	var rat_overall = snap.val().overall_rating;
+	if (rat_overall == null){
+	    rat_overall = "-";
+	}			
+	var rat_race = snap.val().average_race_rating;
+	if (rat_race == null){
+	    rat_race = "-";
+	}
+	var rat_gender = snap.val().average_gender_rating;
+	if (rat_gender == null){
+	    rat_gender = "-";
+	}
 	change_vals(title,img_src,rat_overall,rat_race,rat_gender,date);
     });
 }
