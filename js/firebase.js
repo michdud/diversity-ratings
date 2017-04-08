@@ -57,14 +57,20 @@ function get_vals(id){
 	var rat_overall = snap.val().overall_rating;
 	if (rat_overall == null){
 	    rat_overall = "-";
+	} else {
+	    rat_race += "/10";
 	}			
 	var rat_race = snap.val().average_race_rating;
 	if (rat_race == null){
 	    rat_race = "-";
+	} else {
+	    rat_race += "/10";
 	}
 	var rat_gender = snap.val().average_gender_rating;
 	if (rat_gender == null){
 	    rat_gender = "-";
+	} else {
+	    rat_gender += "/10";
 	}
 	change_vals(title,img_src,rat_overall,rat_race,rat_gender,date);
     });

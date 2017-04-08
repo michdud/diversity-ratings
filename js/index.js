@@ -51,14 +51,20 @@ function setup_page(page, last_key){
 	    var rat_overall = childSnapshot.val().overall_rating;
 	    if (rat_overall == null){
 		rat_overall = "-";
-	    }			
+	    } else {
+		rat_overall += "/10";
+	    }
 	    var rat_race = childSnapshot.val().average_race_rating;
 	    if (rat_race == null){
 		rat_race = "-";
+	    } else {
+		rat_race += "/10";
 	    }
 	    var rat_gender = childSnapshot.val().average_gender_rating;
 	    if (rat_gender == null){
 		rat_gender = "-";
+	    } else {
+		rat_gender += "/10";
 	    }
 	    make_movie_box(id,index,img_src,title,release_date,rat_overall,rat_race,rat_gender);
 	    //last_Key = snapshot.key();
