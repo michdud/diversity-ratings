@@ -109,7 +109,6 @@ get_vals(key);
 		  });
 
 		  avgRaceRatingValue = (avgRaceRatingValue * 1.0) / numChildren;
-	          console.log(Math.round(avgRaceRatingValue * 100) / 100);
 		  avgRaceRating.set(Math.round(avgRaceRatingValue * 100) / 100);
 
 		  reference.on("value", function(snapshot) {
