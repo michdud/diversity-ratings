@@ -120,8 +120,9 @@ get_vals(key);
 		  	} else {
 		  		overallRatingValue = movie.average_race_rating;
 		  	}
-
-		  	overallRating.set(overallRatingValue);
+			
+			overallRatingValue = Math.round(overallRatingValue * 100) / 100;
+			overallRating.set(overallRatingValue);
 			});
    	 	});
 	}
@@ -158,9 +159,10 @@ get_vals(key);
 		  		overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
 		  	} else {
 		  		overallRatingValue = movie.average_gender_rating;
-		  	}
-
-		  	overallRating.set(overallRatingValue);
+		  	}	
+			
+			overallRatingValue = Math.round(overallRatingValue * 100) / 100;
+			overallRating.set(overallRatingValue);
 			});
    	 	});
     }
