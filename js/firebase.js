@@ -124,6 +124,8 @@ get_vals(key);
 		  	overallRating.set(Math.round(overallRatingValue * 100) / 100);
 			});
    	 	});
+	    
+             $("#reviewDivs").append('<div class="row">'+ reviewText +'</div>');
 	     location.reload(false);
 	}
 
@@ -164,6 +166,8 @@ get_vals(key);
 			overallRating.set(Math.round(overallRatingValue * 100) / 100);
 			});
    	 	});
+	    
+	     $("#reviewDivs").append('<div class="row">'+ reviewText +'</div>');
 	     location.reload(false);
     }
 
