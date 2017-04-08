@@ -11,9 +11,7 @@ body {
 footer {
     margin: 50px 0;
 }
-.navbar{
-    background-color: #1d3541;
-}
+
 .movie_info{
   padding-bottom: 25px;
   display: inline-block;
@@ -50,4 +48,9 @@ footer {
 
 .form-group{
   padding-left: 10px;
+}
+
+.col-lg-4 img {
+    width: 320px;
+    height: 480px;
 }
