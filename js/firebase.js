@@ -89,15 +89,18 @@ get_vals(key);
 /****** firebase **********/
     function writeRace() {
 		var numRating = $('#race_options :selected').text();
+		var reviewText = $('#race_explanation').val();
 
 		const reference = movies_db.child(key);
 		const overallRating = reference.child("overall_rating");
 		const allRatings = reference.child("race_rating");
 		const avgRaceRating = reference.child("average_race_rating");
+		const review = reference.child("reviews");
 
 		allRatings.push(numRating);
+		review.push(reviewText); 
 
-		allRatings.once("value", function(snapshot) {
+		allRatings.once("value", function(snapshot) {		  
 		  var avgRaceRatingValue = 0;
 		  var numChildren = snapshot.numChildren();
 
@@ -125,11 +128,13 @@ get_vals(key);
 
     function writeGender() {
 		var numRating = $('#gender_options :selected').text();
+	    	var reviewText = $('#gender_explanation').val();
 	    
 	   	const reference = movies_db.child(key);
-	    const overallRating = reference.child("overall_rating");
+	        const overallRating = reference.child("overall_rating");
 		const allRatings = reference.child("gender_rating");
 		const avgGenderRating = reference.child("average_gender_rating");
+	    	const review = reference.child("reviews");
 
 		allRatings.push(numRating);
 
