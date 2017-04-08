@@ -106,6 +106,8 @@ get_vals(key);
 
 		  	if (movie.average_gender_rating != null) {
 		  		overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
+		  	} else {
+		  		overallRatingValue = movie.average_race_rating;
 		  	}
 
 		  	overallRating.set(overallRatingValue);
@@ -140,6 +142,8 @@ get_vals(key);
 
 		  	if (movie.average_race_rating != null) {
 		  		overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
+		  	} else {
+		  		overallRatingValue = movie.average_gender_rating;
 		  	}
 
 		  	overallRating.set(overallRatingValue);
