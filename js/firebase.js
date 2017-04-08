@@ -1,19 +1,16 @@
 const movies_db = firebase.database().ref('movies');
 
-var firebaseRef = new Firebase(url);
-
     function writeRace() {
-		var numRating = $(‘#race_rating’).val();
+		var numRating = $('#race_options :selected').text();
 
-		movies_db.child('127380').set({race_rating: numRating});
-		evt.preventDefault();
+		movies_db.child('121856').child("race_rating").set(numRating);
     }
 
     function writeGender() {
-		var numRating = $(‘#gender_rating’).val();
+		var numRating = $('#gender_options :selected').text();
 	    	
-		movies_db.child('127380').set({gender_rating: numRating});
-		evt.preventDefault();
+		movies_db.child('121856').child("gender_rating").set(numRating);
+
     }
 
 var submit = document.getElementById('race_rating');
