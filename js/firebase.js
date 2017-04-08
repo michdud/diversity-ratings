@@ -138,19 +138,21 @@ reviews.once("value", function(snapshot) {
 
 
 		reference.on("value", function(snapshot) {
-		  	var overallRatingValue = 0;
-		  	var movie = snapshot.val();
+		var movie = snapshot.val();
 
-		  	if (movie.average_race_rating != null) {
-		  		overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
-		  	} else {
-		  		overallRatingValue = movie.average_gender_rating;
-		  	}	
-			
-			overallRating.set(Math.round(overallRatingValue * 100) / 100);
-		});
+		if (movie.average_race_rating != null || movie.average_gender_rating != null) {
+			overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
+		} else if (movie.average_race_rating == null) {
+			overallRatingValue = movie.average_gender_rating;
+		} else {
+			overallRatingValue = movie.average_race_rating;
+		}
 
-	    location.reload(false);
+		overallRating.set(Math.round(overallRatingValue * 100) / 100);
+	});
+
+    location.reload(false);
+
     }
 
 submit = document.getElementById('gender_rating');
