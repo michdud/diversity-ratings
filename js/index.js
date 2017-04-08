@@ -45,7 +45,7 @@ function setup_page(page, last_key){
 	    var id = childSnapshot.getKey();
 	    var img_src = childSnapshot.val().poster_path;
 	    img_src = "https://image.tmdb.org/t/p/w1280" + img_src;
-	    var title = childSnapshot.val().original_title;
+	    var title = childSnapshot.val().title;
 	    var release_date = childSnapshot.val().release_date;
 	    release_date = parse_date(release_date);
 	    var rat_overall = "100%";//childSnapshot.val().
