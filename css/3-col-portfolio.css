@@ -11,7 +11,9 @@ body {
 footer {
     margin: 50px 0;
 }
-
+.navbar{
+    background-color: #1d3541;
+}
 .movie_info{
   padding-bottom: 25px;
   display: inline-block;

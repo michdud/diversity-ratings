@@ -67,17 +67,13 @@ get_vals(key);
 var firebaseRef = new Firebase(url);
 
     function writeRace() {
-		var numRating = $(‘#race_rating’).val();
-
-		movies_db.child(key).set({race_rating: numRating});
-		evt.preventDefault();
+		var numRating = $('#race_options :selected').text();
+		movies_db.child(key).child("race_rating").set(numRating);
     }
 
     function writeGender() {
-		var numRating = $(‘#gender_rating’).val();
-	    	
-		movies_db.child(key).set({gender_rating: numRating});
-		evt.preventDefault();
+		var numRating = $('#gender_options :selected').text();
+		movies_db.child(key).child("gender_rating").set(numRating);
     }
 
 var submit = document.getElementById('race_rating');

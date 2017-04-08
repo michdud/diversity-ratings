@@ -45,7 +45,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <a href="#">About</a>
+            <a href="/about">About</a>
           </li>
         </ul>
       </div>
@@ -93,7 +93,7 @@
         <div class="form-group">
             <h3>Racial Diversity</h3>
             <label for="sel1">Racial Diversity Rating:</label>
-            <select class="form-control" id="race_rating">
+            <select class="form-control" id="race_options">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -108,13 +108,13 @@
           &nbsp;
             <label for="race_text">Explain your rating:</label>
             <textarea class="form-control" rows="5" id="race_explanation"></textarea>
-            <input type="submit" value="Submit">
+            <input type="submit" id="race_rating" value="Submit">
         </div>
         <!--Gender Representation forms-->
         <div class="form-group">
           <h3>Gender Representation</h3>
           <label for="sel2">Gender Diversity Rating:</label>
-            <select class="form-control" id="gender_rating">
+            <select class="form-control" id="gender_options">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -129,7 +129,7 @@
           &nbsp;
           <label for="gender_text">Explain your rating:</label>
           <textarea class="form-control" rows="5" id="gender_explanation"></textarea>
-          <input type="submit" value="Submit">
+          <input type="submit" id="gender_rating" value="Submit">
         </div>
     </div>
 
@@ -175,6 +175,8 @@ firebase.initializeApp(config);
 <script src="js/movie.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+<script src="js/firebase.js"></script>
 
 </body>
 
