@@ -110,7 +110,7 @@
           &nbsp;
             <label for="race_text">Explain your rating:</label>
             <textarea class="form-control" rows="5" id="race_explanation" placeholder="Enter your review here."></textarea>
-            <input type="submit" id="race_rating" value="Submit">
+            <input type="submit" id="race_rating" value="Submit" onclick="clearContents(race_explanation)">
         </div>
         <!--Gender Representation forms-->
         <div class="form-group">
@@ -171,7 +171,13 @@ firebase.initializeApp(config);
 
 <pre id=“title”>
 </pre>
-
+<script>
+  function clearContents(element) {
+    element.value = '';
+  }
+</script>
+  
+  
 <!-- jQuery -->
 <script src="js/jquery.js"></script>
 
