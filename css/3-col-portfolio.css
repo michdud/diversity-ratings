@@ -43,7 +43,7 @@ footer {
 }
 
 .movie_title{
-  margin-bottom: -20px;
+  margin-bottom: -10px;
 }
 
 .poster_path{
@@ -137,5 +137,5 @@ footer {
 
 .col-md-8 h6 {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
 }
