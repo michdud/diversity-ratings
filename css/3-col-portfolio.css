@@ -60,16 +60,12 @@ footer {
 }
 
 .rating_race_diversity{
-  margin-top: -7px;
+  margin-top: -5px;
 }
 
 .rating_gender_representation{
-  margin-top: -10px;
+  margin-top: -5px;
   margin-bottom: 20px;
-}
-
-.row_movie_title {
-    margin-bottom: 5px;
 }
 
 .rating_overall{
@@ -136,6 +132,7 @@ footer {
 }
 
 .col-md-8 h6 {
+  font-style: italic;
   font-weight: bold;
   font-size: 22px;
 }
