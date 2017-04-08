@@ -124,6 +124,7 @@ get_vals(key);
 		  	overallRating.set(Math.round(overallRatingValue * 100) / 100);
 			});
    	 	});
+	     location.reload(false);
 	}
 
     function writeGender() {
@@ -163,6 +164,7 @@ get_vals(key);
 			overallRating.set(Math.round(overallRatingValue * 100) / 100);
 			});
    	 	});
+	     location.reload(false);
     }
 
 var submit = document.getElementById('race_rating');
