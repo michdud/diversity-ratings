@@ -1,5 +1,5 @@
 $(document).ready(function() {
-$("#race_rating").click(function () {
+$("input[type=race_rating]").click(function () {
   var reviewText = $('#race_explanation').val();
   var domElement = $('<div class="row">'+ reviewText +'</div>');
   $(this).after(domElement);
