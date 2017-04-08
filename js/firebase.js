@@ -15,7 +15,16 @@ var getKey = function(){
     return results[1] || 0;
 }
 
+function key_exists(){
+    movies_db.once("value",function(snapshot){
+	if(!snapshot.hasChild(key)){
+	    window.location.replace("/");
+	}
+    });
+}
 var key = getKey();
+key_exists();
+   
 /****** Setting up Page *************/
 function parse_date(release_date) {
 
@@ -36,7 +45,6 @@ function change_vals(title,img_src,rat_overall,rat_race,rat_gender,date){
     rat_overall = "Overall Rating: " + rat_overall;
     rat_race = "Racial Diversity: " + rat_race;
     rat_gender = "Gender Diversity: " + rat_gender;
-    console.log(title);
     $("img").attr("src",img_src);
     $(".movie_title").text(title);
     $(".release_date").text(date);
