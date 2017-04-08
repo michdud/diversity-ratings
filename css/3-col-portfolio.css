@@ -4,26 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-h1 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h2 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h3 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-h4 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-p {
-    font-family: 'Open Sans', sans-serif;
-}
-
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -39,6 +19,7 @@ footer {
 }
 
 .movie_title{
+  margin-bottom: -15px;
 }
 
 .poster_path{
@@ -46,13 +27,20 @@ footer {
   float: left;
 }
 
+.overview {
+  margin-bottom: 20px;
+}
+
 .release_date{
+  margin-bottom: 20px;
 }
 
 .rating_race_diversity{
+  margin-top: -5px;
 }
 
 .rating_gender_representation{
+  margin-top: -10px;
 }
 
 .rating_overall{
@@ -82,7 +70,7 @@ footer {
 
 .col-md-8 h3 {
   font-style: italic;
-  font-size: 24px;
+  font-size: 14px;
 }
 
 .col-md-8 h4 {
