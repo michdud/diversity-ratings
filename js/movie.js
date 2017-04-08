@@ -1,6 +1,6 @@
 $("#race_rating").click(function () {
   var reviewText = $('#race_explanation').val();
-  $("#container").append('<div class="row">'+ reviewText +'</div>');
-  clearContents('race_explanation');
-  console.log("hi");
+  var domElement = $('<div class="row">'+ reviewText +'</div>');
+  $(this).after(domElement);
+  //$("#container").append('<div class="row">'+ reviewText +'</div>');
 });
