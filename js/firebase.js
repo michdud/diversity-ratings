@@ -109,20 +109,19 @@ get_vals(key);
 		  });
 
 		  avgRaceRatingValue = (avgRaceRatingValue * 1.0) / numChildren;
-		  avgRaceRating.set(avgRaceRatingValue);
+		  avgRaceRating.set(Math.round(avgRaceRatingValue * 100) / 100);
 
 		  reference.on("value", function(snapshot) {
 		  	var overallRatingValue = 0;
 		  	var movie = snapshot.val();
 
 		  	if (movie.average_gender_rating != null) {
-		  		overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
+		  		overallRatingValue = movie.average_gender_rating + movie.average_race_rating;
 		  	} else {
 		  		overallRatingValue = movie.average_race_rating;
 		  	}
-			
-			overallRatingValue = Math.round(overallRatingValue * 100) / 100;
-			overallRating.set(overallRatingValue);
+
+		  	overallRating.set(Math.round(overallRatingValue * 100) / 100);
 			});
    	 	});
 	}
@@ -149,7 +148,7 @@ get_vals(key);
 		  });
 
 		  avgGenderRatingValue = (avgGenderRatingValue * 1.0) / numChildren;
-		  avgGenderRating.set(avgGenderRatingValue);
+		  avgGenderRating.set(Math.round(avgGenderRatingValue * 100) / 100);
 
 		  reference.on("value", function(snapshot) {
 		  	var overallRatingValue = 0;
@@ -161,8 +160,7 @@ get_vals(key);
 		  		overallRatingValue = movie.average_gender_rating;
 		  	}	
 			
-			overallRatingValue = Math.round(overallRatingValue * 100) / 100;
-			overallRating.set(overallRatingValue);
+			overallRating.set(Math.round(overallRatingValue * 100) / 100);
 			});
    	 	});
     }
