@@ -8,6 +8,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
+  <!--firebase-->
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDQ42HoiZ6x4u1ZA6YKM-68W3KO5oAJypU",
+  authDomain: "movie-project-bc16f.firebaseapp.com",
+  databaseURL: "https://movie-project-bc16f.firebaseio.com",
+  projectId: "movie-project-bc16f",
+  storageBucket: "movie-project-bc16f.appspot.com",
+  messagingSenderId: "956320986570"
+};
+firebase.initializeApp(config);
+</script>
+
+<pre id=“title”>
+</pre>
+<script>
+  function clearContents(element) {
+    element.value = '';
+  }
+</script>
   <script src="js/firebase.js"></script>
   <title>featured:</title>
 
@@ -154,28 +176,7 @@
 </div>
 <!-- /.container -->
 
-<!--firebase-->
-<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
-<script>
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyDQ42HoiZ6x4u1ZA6YKM-68W3KO5oAJypU",
-  authDomain: "movie-project-bc16f.firebaseapp.com",
-  databaseURL: "https://movie-project-bc16f.firebaseio.com",
-  projectId: "movie-project-bc16f",
-  storageBucket: "movie-project-bc16f.appspot.com",
-  messagingSenderId: "956320986570"
-};
-firebase.initializeApp(config);
-</script>
 
-<pre id=“title”>
-</pre>
-<script>
-  function clearContents(element) {
-    element.value = '';
-  }
-</script>
   
   
 <!-- jQuery -->
