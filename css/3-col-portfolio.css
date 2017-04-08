@@ -41,6 +41,7 @@ footer {
 
 .rating_gender_representation{
   margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 .rating_overall{
@@ -75,4 +76,10 @@ footer {
 
 .col-md-8 h4 {
   font-size: 18px;
+}
+
+.col-md-8 h5 {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
 }
