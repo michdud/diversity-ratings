@@ -58,7 +58,7 @@ function get_vals(id){
 	if (rat_overall == null){
 	    rat_overall = "-";
 	} else {
-	    rat_race += "/10";
+	    rat_overall += "/10";
 	}			
 	var rat_race = snap.val().average_race_rating;
 	if (rat_race == null){
