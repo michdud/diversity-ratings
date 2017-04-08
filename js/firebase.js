@@ -115,14 +115,14 @@ reviews.once("value", function(snapshot) {
 		var avgGenderRatingValue = 0;
 
 		allGenderRatings.once("value", function(snapshot) {		  
-		  var numRaceChildren = snapshot.numChildren();
+		  var numGenderChildren = snapshot.numChildren();
 
 		  snapshot.forEach(function(child) {
-		    avgRaceRatingValue += parseInt(child.val());
+		    avgGenderRatingValue += parseInt(child.val());
 		  });
 	
-		  avgRaceRatingValue = (avgRaceRatingValue * 1.0) / numRaceChildren;
-		  avgGenderRating.set(Math.round(avgRaceRatingValue * 100) / 100);
+		  avgGenderRatingValue = (avgGenderRatingValue * 1.0) / numGenderChildren;
+		  avgGenderRating.set(Math.round(avgGenderRatingValue * 100) / 100);
 		});
 
 		allRaceRatings.once("value", function(snapshot) {		  
@@ -135,6 +135,7 @@ reviews.once("value", function(snapshot) {
 		  avgRaceRatingValue = (avgRaceRatingValue * 1.0) / numRaceChildren;
 		  avgRaceRating.set(Math.round(avgRaceRatingValue * 100) / 100);
 		});
+
 
 		reference.on("value", function(snapshot) {
 		  	var overallRatingValue = 0;
