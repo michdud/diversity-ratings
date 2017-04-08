@@ -8,16 +8,6 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
-.portfolio-item {
-    margin-bottom: 25px;
-    display: inline-block;
-    float: left;
-}
-
-.portfolio-item h3 p{
-    padding-left: 10px;
-}
-
 footer {
     margin: 50px 0;
 }
@@ -46,4 +36,16 @@ footer {
 }
 
 .rating_overall{
+}
+
+.col-border{
+  content:"":
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid black;
+
+}
+
+.form-group{
+  padding-left: 10px;
 }

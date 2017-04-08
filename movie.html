@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Movie Ratings</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/3-col-portfolio.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/index.html">Movies for Good</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Header -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Movies for Good
+          <small>Ratings of Inclusion</small>
+        </h1>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <!--movie info-->
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="http://placehold.it/320x480"></img>
+      </div>
+      <div class="col-md-8 col-border">
+        <div class="movie_title">
+          <h2><mark>Monsters, Inc.</mark></h2>
+        </div>
+        <div class="release_date">
+          <h3>March 3, 2017</h3>
+        </div>
+        <div class="rating_overall">
+          <h4>Overall Rating: 100%</h4>
+        </div>
+        <div class="rating_race_diversity">
+          <p>Racial Diversity Rating: 100%</p>
+        </div>
+        <div class="rating_gender_representation">
+          <p>Gender Representation Rating: 100%</p>
+        </div>
+        <!--Racial Diversity forms-->
+
+        <div class="form-group">
+            <h3>Racial Diversity</h3>
+              <div class="row">
+              <label for="race_rating_text">Your rating of racial diversity:</label>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="race_rating">
+              </div>
+            </div>
+              <div class="row">
+            <label for="race_text">Explain your rating:</label>
+          </div>
+            <textarea class="form-control" rows="5" id="race_explanation"></textarea>
+            <input type="submit" value="Submit">
+        </div>
+        <!--Gender Representation forms-->
+        <div class="form-group">
+          <h3>Gender Representation</h3>
+          <label for="gender_rating_text">Your rating of gender representation:</label>
+          <input type="text" class="form-control" id="gender_rating">
+          <label for="gender_text">Explain your rating:</label>
+          <textarea class="form-control" rows="5" id="gender_explanation"></textarea>
+          <input type="submit" value="Submit">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <p>Copyright &copy; Your Website 2014</p>
+      </div>
+    </div>
+    <!-- /.row -->
+  </footer>
+
+</div>
+<!-- /.container -->
+
+<!--firebase-->
+<script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+<script>
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDQ42HoiZ6x4u1ZA6YKM-68W3KO5oAJypU",
+  authDomain: "movie-project-bc16f.firebaseapp.com",
+  databaseURL: "https://movie-project-bc16f.firebaseio.com",
+  projectId: "movie-project-bc16f",
+  storageBucket: "movie-project-bc16f.appspot.com",
+  messagingSenderId: "956320986570"
+};
+firebase.initializeApp(config);
+</script>
+
+<pre id=“title”>
+</pre>
+
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
