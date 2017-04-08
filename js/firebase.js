@@ -92,77 +92,51 @@ const reviews = movies_db.child(key).child("reviews");
 reviews.once("value", function(snapshot) {
 	snapshot.forEach(function(child) {
 		$("#reviewDivs").append('<div class="row">'+ child.val() +'</div>');
-		console.log(5);
 	});
 });
 
-    function writeRace() {
-		var numRating = $('#race_options :selected').text();
-		var reviewText = $('#race_explanation').val();
+    function writeGender() {
+    	var raceNumRating = $('#race_options :selected').text();
+    	var genderNumRating = $('#gender_options :selected').text();
+		var reviewText = $('#gender_explanation').val();
 
 		const reference = movies_db.child(key);
-		const overallRating = reference.child("overall_rating");
-		const allRatings = reference.child("race_rating");
+		const allGenderRatings = reference.child("gender_rating");
+		const allRaceRatings = reference.child("race_rating");
 		const avgRaceRating = reference.child("average_race_rating");
+		const avgGenderRating = reference.child("average_gender_rating");
 		const review = reference.child("reviews");
 
-		allRatings.push(numRating);
+		allGenderRatings.push(genderNumRating);
+		allRaceRatings.push(raceNumRating);
 		review.push(reviewText); 
 
-		allRatings.once("value", function(snapshot) {		  
-		  var avgRaceRatingValue = 0;
-		  var numChildren = snapshot.numChildren();
+		var avgRaceRatingValue = 0;
+		var avgGenderRatingValue = 0;
+
+		allGenderRatings.once("value", function(snapshot) {		  
+		  var numRaceChildren = snapshot.numChildren();
 
 		  snapshot.forEach(function(child) {
 		    avgRaceRatingValue += parseInt(child.val());
 		  });
+	
+		  avgRaceRatingValue = (avgRaceRatingValue * 1.0) / numRaceChildren;
+		  avgGenderRating.set(Math.round(avgRaceRatingValue * 100) / 100);
+		});
 
-		  avgRaceRatingValue = (avgRaceRatingValue * 1.0) / numChildren;
-		  avgRaceRating.set(Math.round(avgRaceRatingValue * 100) / 100);
-
-		  reference.on("value", function(snapshot) {
-		  	var overallRatingValue = 0;
-		  	var movie = snapshot.val();
-
-		  	if (movie.average_gender_rating != null) {
-		  		overallRatingValue = (movie.average_gender_rating + movie.average_race_rating) / 2.0;
-		  	} else {
-		  		overallRatingValue = movie.average_race_rating;
-		  	}
-
-		  	overallRating.set(Math.round(overallRatingValue * 100) / 100);
-			});
-   	 	});
-	    
-             $("#reviewDivs").append('<div class="row">'+ reviewText +'</div>');
-	     location.reload(false);
-	}
-
-    function writeGender() {
-		var numRating = $('#gender_options :selected').text();
-	    	var reviewText = $('#gender_explanation').val();
-	    
-	   	const reference = movies_db.child(key);
-	        const overallRating = reference.child("overall_rating");
-		const allRatings = reference.child("gender_rating");
-		const avgGenderRating = reference.child("average_gender_rating");
-	    	const review = reference.child("reviews");
-
-		allRatings.push(numRating);
-	    	review.push(reviewText); 
-
-		allRatings.once("value", function(snapshot) {
-		  var avgGenderRatingValue = 0;
-		  var numChildren = snapshot.numChildren();
+		allRaceRatings.once("value", function(snapshot) {		  
+		  var numRaceChildren = snapshot.numChildren();
 
 		  snapshot.forEach(function(child) {
-		    avgGenderRatingValue += parseInt(child.val());
+		    avgRaceRatingValue += parseInt(child.val());
 		  });
+	
+		  avgRaceRatingValue = (avgRaceRatingValue * 1.0) / numRaceChildren;
+		  avgRaceRating.set(Math.round(avgRaceRatingValue * 100) / 100);
+		});
 
-		  avgGenderRatingValue = (avgGenderRatingValue * 1.0) / numChildren;
-		  avgGenderRating.set(Math.round(avgGenderRatingValue * 100) / 100);
-
-		  reference.on("value", function(snapshot) {
+		reference.on("value", function(snapshot) {
 		  	var overallRatingValue = 0;
 		  	var movie = snapshot.val();
 
@@ -173,15 +147,10 @@ reviews.once("value", function(snapshot) {
 		  	}	
 			
 			overallRating.set(Math.round(overallRatingValue * 100) / 100);
-			});
-   	 	});
-	    
-	     $("#reviewDivs").append('<div class="row">'+ reviewText +'</div>');
-	     location.reload(false);
-    }
+		});
 
-var submit = document.getElementById('race_rating');
-submit.onclick = writeRace;
+	    location.reload(false);
+    }
 
 submit = document.getElementById('gender_rating');
 submit.onclick = writeGender;
