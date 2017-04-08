@@ -8,7 +8,7 @@ var key = new RegExp('[\?]key=');
 credit:https://www.sitepoint.com/url-parameters-jquery/
 */
 var getKey = function(){
-    var results = new RegExp('[\?&]key=%22([^&#]*)%22').exec(window.location.href);
+    var results = new RegExp('[\?&]key=([^&#]*)').exec(window.location.href);
     if (results == null){
 	window.location.replace("/");
     }
