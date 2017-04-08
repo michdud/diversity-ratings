@@ -91,7 +91,7 @@ const reviews = movies_db.child(key).child("reviews");
 
 reviews.once("value", function(snapshot) {
 	snapshot.forEach(function(child) {
-		$("#reviewDivs").append('<div class="row">'+ child.val() +'</div>');
+		$("#reviewDivs").append('<div class="row">'+ '- ' + child.val() +'</div>');
 	});
 });
 
