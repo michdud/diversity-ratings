@@ -4,6 +4,26 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
@@ -82,4 +102,27 @@ footer {
   font-weight: bold;
   font-style: italic;
   font-size: 20px;
+}
+
+.form-group{
+  padding-left: 10px;
+}
+
+.col-lg-4 img {
+    width: 320px;
+    height: 480px;
+}
+
+.col-md-8 h2 {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.col-md-8 h3 {
+  font-style: italic;
+  font-size: 24px;
+}
+
+.col-md-8 h4 {
+  font-size: 18px;
 }
