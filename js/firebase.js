@@ -87,6 +87,15 @@ function get_vals(id){
 get_vals(key);
 
 /****** firebase **********/
+const reviews = movies_db.child(key).child("reviews");
+
+reviews.once("value", function(snapshot) {
+	snapshot.forEach(function(child) {
+		$("#reviewDivs").append('<div class="row">'+ child.val() +'</div>');
+		console.log(5);
+	});
+});
+
     function writeRace() {
 		var numRating = $('#race_options :selected').text();
 		var reviewText = $('#race_explanation').val();
