@@ -1,2 +1,2 @@
-# michdud.github.io
-Bootstrap template from Start Bootstrap. See license doc for more information.
+# diversity-ratings
+A website from BuildHer 2017 focusing on diversity in film.
